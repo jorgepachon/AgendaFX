@@ -1,10 +1,9 @@
-package Controlador;
+package application;
 	
 import java.io.IOException;
-import Vista.TablaControlador;
-import Vista.VistaVentanaDos;
-import Vista.VistaVentanaDos;
-import Controlador.Main;
+import Vista.VistaPrincipal;
+import Vista.VistaEdicion;
+import application.Main;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -32,15 +31,15 @@ public class Main extends Application {
 	
 	public void mostrarVentanaPrincipal() {
         try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/Tabla.fxml"));
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/VistaPrincipal.fxml"));
             rootPane=(AnchorPane) loader.load();
             Scene scene = new Scene(rootPane);
-            stagePrincipal.setTitle("Ventana Principal");
+            stagePrincipal.setTitle("AGENDA");
             stagePrincipal.setScene(scene);
             /*
              * Añadidos las llamadas del main al Controlador y del controlador al main ***/
-            TablaControlador controller = loader.getController();
-            controller.setTablaControlador(this);
+            VistaPrincipal controller = loader.getController();
+            controller.setProgramaPrincipal(this);
 
             stagePrincipal.show();
         } catch (IOException e) {
@@ -49,17 +48,17 @@ public class Main extends Application {
    }
 	 public void mostrarVentanaSecundaria() {
 	        try {
-	            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../vista/VistaVentanaDos.fxml"));
+	            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../vista/VistaEdicion.fxml"));
 	            AnchorPane ventanaDos = (AnchorPane) loader.load();
 	            /* Creamos la segunda ventana como otro stage */
 	            Stage ventana = new Stage();
-	            ventana.setTitle("Ventana Dos");
+	            ventana.setTitle("CONTACTO");
 	            /* Le decimos a la ventana quién es la ventana original */
 	            ventana.initOwner(stagePrincipal);
 	            Scene scene = new Scene(ventanaDos);
 	            ventana.setScene(scene);
 
-	            VistaVentanaDos controller2 = loader.getController();
+	            VistaEdicion controller2 = loader.getController();
 	            controller2.setStagePrincipal(ventana);
 
 	            ventana.show();
