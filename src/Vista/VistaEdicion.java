@@ -5,9 +5,12 @@ import javafx.stage.Stage;
 
 
 public class VistaEdicion {
-
+	
 	@FXML
-	private Button buttonclose;
+	private Button Aceptar;
+	
+	@FXML
+	private Button Cancelar;
 
 	private Stage ventana;
 

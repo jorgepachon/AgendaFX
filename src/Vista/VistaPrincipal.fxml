@@ -5,22 +5,21 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="380.0" prefWidth="448.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="Vista.VistaPrincipal">
+<AnchorPane prefHeight="380.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.VistaPrincipal">
    <children>
       <AnchorPane layoutX="7.0" prefHeight="276.0" prefWidth="294.0">
          <children>
-            <TableView layoutX="-9.0" prefHeight="276.0" prefWidth="448.0">
+            <TableView fx:id="Tabla" layoutX="-9.0" onSort="#initialize" prefHeight="276.0" prefWidth="448.0">
               <columns>
-                <TableColumn prefWidth="150.0" text="Nombre" />
-                <TableColumn minWidth="0.0" prefWidth="153.0" text="Apellido" />
-                  <TableColumn minWidth="0.0" prefWidth="144.0" text="Telefono" />
+                <TableColumn fx:id="ColNombre" onEditStart="#initialize" prefWidth="150.0" text="Nombre" />
+                <TableColumn fx:id="ColApellido" minWidth="0.0" onEditStart="#initialize" prefWidth="153.0" text="Apellido" />
+                  <TableColumn fx:id="ColTelefono" minWidth="0.0" onEditStart="#initialize" prefWidth="144.0" text="Telefono" />
               </columns>
             </TableView>
          </children>
       </AnchorPane>
-      <Button layoutX="14.0" layoutY="320.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Nuevo" />
-      <Button layoutX="165.0" layoutY="320.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Modificar" />
-      <Button layoutX="316.0" layoutY="320.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Eliminar" />
+      <Button fx:id="nuevo" layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#nuevaVentana" prefHeight="25.0" prefWidth="118.0" text="Nuevo" />
+      <Button fx:id="modificar" layoutX="165.0" layoutY="320.0" mnemonicParsing="false" onAction="#nuevaVentana" prefHeight="25.0" prefWidth="118.0" text="Modificar" />
+      <Button fx:id="eliminar" layoutX="316.0" layoutY="320.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Eliminar" />
    </children>
 </AnchorPane>

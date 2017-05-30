@@ -43,8 +43,9 @@ public class VistaPrincipal implements Initializable {
 
 		public void initialize(){
 			Tabla.setItems(this.data);
-			ColNombre.setCellValueFactory(new PropertyValueFactory<Persona,String>("nombre"));
-			ColApellido.setCellValueFactory(new PropertyValueFactory<Persona,String>("apellido"));
+			ColNombre.setCellValueFactory(new PropertyValueFactory<Persona,String>("Nombre"));
+			ColApellido.setCellValueFactory(new PropertyValueFactory<Persona,String>("Apellido"));
+			ColTelefono.setCellValueFactory(new PropertyValueFactory<Persona,String>("Telefono"));
 		}
 
 	    @Override
